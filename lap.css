@@ -1,0 +1,196 @@
+#ltu-tool {
+  max-width: 980px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  background: #f7f9ff;
+  border-radius: 12px;
+  border: 1px solid #dce4ff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+/* 🎛️ Control Buttons */
+#ltu-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #e0e6ff;
+}
+
+.ltu-btn {
+  padding: 8px 10px;
+  background: #f5f7ff;
+  border: solid #d9e1ff;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #0b2340;
+  transition: all 0.3s ease;
+  flex: 1 1 100px; /* sab buttons equal width ke hon aur responsive bhi */
+  text-align: center;
+  min-width: 120px;
+  
+}
+
+.ltu-btn.active {
+  background: linear-gradient(180deg, #1e73ff, #1666e6);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 12px rgba(30, 115, 255, 2.0);
+}
+
+.ltu-btn:hover {
+  border: none;
+  background: linear-gradient(180deg, #4c8dff, #1e73ff);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(30, 115, 255, 2.0);
+  
+}
+  
+   /* Battery Indicator Styles */
+@keyframes flow {
+  0%, 100% { background-position: left top; }
+  50% { background-position: right top; }
+}
+
+.battery {
+  display: block;
+  width: 173px;
+  height: 60px;
+  position: relative;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-color: #e0e6ff;
+  border: 1px solid #cdd6ff;
+}
+
+.battery::before,
+.battery::after {
+  position: absolute;
+  top: 16px;
+  height: 28px;
+}
+
+.battery::before {
+  content: "";
+  width: 10px;
+  left: 100%;
+  background-color: #e0e6ff;
+  border-radius: 0 10px 10px 0;
+}
+
+.battery::after {
+  content: attr(data-level);
+  width: 110px;
+  left: 15px;
+  color: #;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.battery .indicator {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 30px;
+  height: 46px;
+  background-image: linear-gradient(to right, #005b96 0%, #22f5e3 100%);
+  background-size: 200% 100%;
+  background-position: left top;
+  border-radius: 6px;
+  transition: width 1s ease;
+  animation: flow 6s infinite;
+} 
+  
+  /* 🧭 Battery Info */
+#ltu-battery {
+  padding: 12px 15px;
+  border-bottom: 1px solid #d8e1ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  
+  background-image: linear-gradient(to right, #22f5e3 20%, #005b96 100%);
+  background-size: 200% 100%;
+  background-position: left top;
+  transition: width 1s ease;
+  animation: flow 6s infinite;
+}
+
+#ltu-battery span {
+  font-size: 15px;
+  color: #fff;
+}
+  
+ 
+  /* Universal Section Box Layout (Matches Control Buttons Look) */
+
+.ltu-section-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 20px auto;
+  border: 1px solid #dce4ff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+  max-width: 760px;
+  text-align: center;
+}
+
+.ltu-section-title {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  color: #073763;
+  font-weight: 700;
+}
+
+/* same layout as 15 buttons row */
+.ltu-section-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+ .ltu-btns {
+  padding: 8px 10px;
+  background: #06b6d4;
+  border: solid #d9e1ff;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #0b2340;
+  transition: all 0.3s ease;
+  flex: 1 1 100px; /* sab buttons equal width ke hon aur responsive bhi */
+  text-align: center;
+  min-width: 120px;
+  
+}
+  
+  .ltu-btns.active {
+  background: linear-gradient(180deg, #1e73ff, #1666e6);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 12px rgba(30, 115, 255, 2.0);
+}
+
+.ltu-btns:hover {
+  border: none;
+  background: linear-gradient(180deg, #4c8dff, #1e73ff);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(30, 115, 255, 2.0);
+  
+}
+
+/* status text */
+.ltu-section-status {
+  margin-top: 10px;
+  color: #0a245f;
+  font-weight: 600;
+  font-size: 15px;
+}
+  
